@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WakeBridge</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="titulo">
+        <h1>WakeBridge</h1>
+        <button id="atualizar" class="icone" title="Atualizar">⟳</button>
+      </div>
+      <label class="ponte">
+        Ponte
+        <select id="ponte"></select>
+      </label>
+    </header>
+
+    <p id="aviso" class="aviso" hidden></p>
+    <ul id="lista" class="lista"></ul>
+
+    <dialog id="dialogo-mac">
+      <form method="dialog">
+        <h2>MAC de <span id="mac-nome"></span></h2>
+        <p>É o MAC da placa que vai acordar o aparelho (no PC de casa, a do Wi-Fi).</p>
+        <input id="mac-valor" placeholder="AA:BB:CC:DD:EE:FF" autocomplete="off" spellcheck="false" />
+        <div class="acoes">
+          <button value="remover" class="secundario">Remover</button>
+          <button value="cancelar" class="secundario">Cancelar</button>
+          <button value="salvar">Salvar</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
