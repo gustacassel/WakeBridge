@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>WakeBridge</title>
+  <!-- App-icon tile -->
+  <rect width="512" height="512" rx="112" fill="#151a20"/>
+  <!-- Magic packet hopping from the phone to the PC, like a bridge -->
+  <path d="M124 228 C146 112 304 100 348 194" fill="none" stroke="#ffc857" stroke-width="14" stroke-linecap="round" stroke-dasharray="1 30"/>
+  <!-- Old phone, standing: body, speaker and home button -->
+  <rect x="78" y="246" width="92" height="150" rx="18" fill="none" stroke="#e8edf2" stroke-width="12"/>
+  <rect x="110" y="264" width="28" height="7" rx="3.5" fill="#e8edf2"/>
+  <circle cx="124" cy="374" r="7" fill="#e8edf2"/>
+  <!-- PC monitor and stand -->
+  <rect x="250" y="210" width="196" height="136" rx="18" fill="none" stroke="#e8edf2" stroke-width="12"/>
+  <path d="M348 346 V384 M308 390 H388" fill="none" stroke="#e8edf2" stroke-width="12" stroke-linecap="round"/>
+  <!-- Power symbol: the PC waking up -->
+  <g fill="none" stroke="#3ddc97" stroke-width="12" stroke-linecap="round">
+    <path d="M367.5 250.2 A34 34 0 1 1 328.5 250.2"/>
+    <path d="M348 236 V274"/>
+  </g>
+</svg>

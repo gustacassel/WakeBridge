@@ -1,12 +1,32 @@
-# WakeBridge
+<p align="center">
+  <img src="assets/logo.svg" width="128" alt="WakeBridge logo">
+</p>
 
-Wake your sleeping PC over Wi-Fi through an old phone on Tailscale, then jump straight into RDP.
-A small Windows tray app built with [Tauri 2](https://tauri.app).
+<h1 align="center">WakeBridge</h1>
 
-```
-Laptop ──Tailscale──▶ Bridge (old Android + Termux) ──Wi-Fi broadcast──▶ PC wakes up
-   ▲                                                                       │
-   └───────────────────────── RDP over Tailscale ◀─────────────────────────┘
+<p align="center">Wake your sleeping PC over Wi-Fi through an old phone on Tailscale, then jump straight into RDP.</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license"></a>
+</p>
+
+A small Windows tray app built with [Tauri 2](https://tauri.app). It lists the devices on your tailnet,
+and when the PC you want is asleep, it asks a bridge device at home to wake it up.
+
+> Independent project, not affiliated with Tailscale Inc. Tailscale is a trademark of Tailscale Inc.
+
+```mermaid
+flowchart LR
+    subgraph away["Anywhere: 4G, hotspot, office"]
+        laptop["💻 Laptop<br/>WakeBridge"]
+    end
+    subgraph home["Home Wi-Fi"]
+        bridge["📱 Bridge<br/>old Android, Termux sshd"]
+        pc["🖥️ PC<br/>sleeping (S3)"]
+    end
+    laptop -- "① SSH over Tailscale" --> bridge
+    bridge -- "② magic packet<br/>Wi-Fi broadcast" --> pc
+    laptop == "③ RDP over Tailscale<br/>once port 3389 answers" ==> pc
 ```
 
 ## Why
